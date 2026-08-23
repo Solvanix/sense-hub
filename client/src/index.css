@@ -119,6 +119,8 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: "Cairo", system-ui, sans-serif;
+    overflow-x: hidden;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -174,4 +176,49 @@
       max-width: 1280px; /* Standard content width */
     }
   }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.arabic-display {
+  font-family: "Noto Kufi Arabic", "Cairo", sans-serif;
+  font-weight: 600;
+}
+
+.section-eye {
+  color: #a1432a;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.frame-panel {
+  position: relative;
+  border: 1px solid;
+  box-shadow: 12px 12px 0 rgba(161, 67, 42, 0.16);
+}
+
+.mesh-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+.mesh-orb-one {
+  width: 28rem;
+  height: 28rem;
+  left: -14rem;
+  bottom: -14rem;
+  background: radial-gradient(circle, rgba(216, 185, 139, 0.48), rgba(216, 185, 139, 0));
+}
+
+.mesh-orb-two {
+  width: 26rem;
+  height: 26rem;
+  right: -10rem;
+  top: -12rem;
+  background: radial-gradient(circle, rgba(18, 48, 90, 0.11), rgba(18, 48, 90, 0));
 }
