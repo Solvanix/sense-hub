@@ -4,6 +4,7 @@ import { CartProvider } from "@/contexts/CartContext";
 import Governance from "@/pages/Governance";
 import NotFound from "@/pages/NotFound";
 import Privacy from "@/pages/Privacy";
+import ProviderDraft from "@/pages/ProviderDraft";
 import ProviderGuide from "@/pages/ProviderGuide";
 import Shop from "@/pages/Shop";
 import { Route, Switch } from "wouter";
@@ -20,6 +21,7 @@ function Router() {
       <Route path={"/الحوكمة"} component={Governance} />
       <Route path={"/الخصوصية"} component={Privacy} />
       <Route path={"/للمزودين"} component={ProviderGuide} />
+      <Route path={"/مسودة-المزود"} component={ProviderDraft} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

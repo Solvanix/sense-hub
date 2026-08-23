@@ -43,6 +43,7 @@ export default function ProviderGuide() {
               <p className="section-eye">مسار المزوّد السياحي · نموذج استرشادي</p>
               <h1 className="arabic-display mt-3 text-4xl leading-[1.6] text-[#10213c] sm:text-5xl">نحوّل أسئلة الاستبانة إلى ملف خدمة أوضح، وخطة نمو أكثر إنصافًا.</h1>
               <p className="mt-5 max-w-3xl text-base leading-8 text-[#56657a]">هذه واجهة عرض لمسار SENSE Experience المستقل، مبنية من محاور الاستبانة السياحية الريفية المرجعية. لا تستقبل طلبات حقيقية ولا تخزن أي بيانات في هذه المرحلة.</p>
+              <Link href="/مسودة-المزود" className="mt-6 inline-flex bg-[#12305a] px-5 py-3 text-sm font-bold text-white">ابدأ مسودة خاصة ←</Link>
             </div>
             <aside className="border-r-4 border-[#a1432a] bg-[#f1e6d6] p-6"><ShieldCheck className="h-5 w-5 text-[#a1432a]" /><h2 className="mt-4 text-lg font-extrabold text-[#10213c]">قاعدة البداية</h2><p className="mt-3 text-sm leading-7 text-[#536277]">لا يظهر ملف عام، ولا ادعاء جودة أو استدامة أو وصول، إلا بعد موافقة نشر مستقلة ومراجعة بشرية وحالة تحقق مناسبة.</p></aside>
           </section>

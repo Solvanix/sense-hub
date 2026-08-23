@@ -1,4 +1,4 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
+import { index, int, json, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -25,4 +25,32 @@ export const users = mysqlTable("users", {
 export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
 
-// TODO: Add your tables here
+export type ProviderDraftContent = {
+  brandName: string;
+  tourismSubsector: string;
+  serviceCategories: string[];
+  generalArea: string;
+  privateServiceDescription: string;
+  publicServiceStory: string;
+  languages: string[];
+  bookingUrl: string;
+  operatingSeasonality: string;
+  growthPriorities: string[];
+  businessBarriers: string[];
+  sustainabilityStatement: string;
+  membershipStatement: string;
+};
+
+export const providerDrafts = mysqlTable("providerDrafts", {
+  id: int("id").autoincrement().primaryKey(),
+  ownerId: int("ownerId").notNull(),
+  status: mysqlEnum("status", ["draft"]).default("draft").notNull(),
+  processingConsent: int("processingConsent").default(0).notNull(),
+  publicListingConsent: int("publicListingConsent").default(0).notNull(),
+  content: json("content").$type<ProviderDraftContent>().notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+}, table => [index("providerDrafts_ownerId_idx").on(table.ownerId)]);
+
+export type ProviderDraft = typeof providerDrafts.$inferSelect;
+export type InsertProviderDraft = typeof providerDrafts.$inferInsert;

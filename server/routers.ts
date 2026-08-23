@@ -3,12 +3,14 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
 import { commerceRouter } from "./routers/commerce";
+import { providerDraftsRouter } from "./routers/providerDrafts";
 import { publicationsRouter } from "./routers/publications";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
   system: systemRouter,
   commerce: commerceRouter,
+  providerDrafts: providerDraftsRouter,
   publications: publicationsRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
